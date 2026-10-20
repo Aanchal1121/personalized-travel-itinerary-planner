@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: travel-itinerary-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: APP_NAME
+        value: Personalized Travel Itinerary Planner
+      - key: APP_ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: "https://your-frontend-app.vercel.app,https://your-frontend-app.netlify.app"
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-20b
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false

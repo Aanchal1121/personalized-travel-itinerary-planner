@@ -30,6 +30,12 @@ yarn-debug.log*
 yarn-error.log*
 .DS_Store
 Thumbs.db
+backups_pre_epic/
+*.bak
+*.bak*
+*.backup
+*.backup*
+
 
 # Editor
 .idea/
