@@ -1,17 +1,19 @@
 services:
   - type: web
     name: travel-itinerary-backend
-    env: python
+    runtime: python
     plan: free
-    buildCommand: pip install -r backend/requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
       - key: APP_NAME
         value: Personalized Travel Itinerary Planner
       - key: APP_ENV
         value: production
       - key: CORS_ORIGINS
-        value: "https://your-frontend-app.vercel.app,https://your-frontend-app.netlify.app"
+        value: "*"
       - key: GROQ_API_KEY
         sync: false
       - key: GROQ_MODEL
