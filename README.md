@@ -346,7 +346,3 @@ The project includes `frontend/vercel.json` and root `netlify.toml`:
 
 ---
 
-## ⚠️ Known Limitations & Notes
-
-- **Transit Times**: Estimated travel times between activities are heuristic approximations designed for scheduling and pacing; real-world conditions (live traffic, transit delays) vary.
-- **Supabase Insert Permissions**: If you receive an RLS policy error when saving a trip, simply execute `supabase_rls_setup.sql` in your Supabase SQL Editor as documented in the Supabase section above.
